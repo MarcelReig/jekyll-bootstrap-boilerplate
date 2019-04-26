@@ -83,4 +83,5 @@ exclude:
   - package.json
   - node_modules
   - README.md
+  - readme.md
   - CHANGELOG.md
