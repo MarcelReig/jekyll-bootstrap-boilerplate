@@ -4,7 +4,7 @@ layout: default
 
 <!-- Post image -->
 <div class="post-image-wrapper">
-  <img src="{{ site.baseurl }}/assets/images/blog/{{ page.image }}" />
+  <img src="/assets/images/blog/{{ page.image }}" />
 </div>
 
 <div class="container mt100 mb100">
@@ -37,7 +37,7 @@ layout: default
           where: "slug", post.category %} {% assign category = category[0] %} {%
           if category %} {% capture category_content %}<a
             class="category"
-            href="{{ site.baseurl }}/{{ category.url }}"
+            href="{{ category.url }}"
             style="background-color:{{ category.color }}"
             >{{ category.name }}</a
           >{% endcapture %} {% endif %} {% if post.tags.size > 0 %} {% capture
@@ -46,7 +46,7 @@ layout: default
           >: {% endcapture %} {% for post_tag in post.tags %} {% assign tag =
           site.my_tags | where: "slug", post_tag %} {% if tag %} {% assign tag =
           tag[0] %} {% capture tags_content_temp %}{{ tags_content
-          }}<a href="{{ site.baseurl }}/{{ tag.url }}">{{ tag.name }}</a
+          }}<a href="{{ tag.url }}">{{ tag.name }}</a
           >{% if forloop.last == false %}, {% endif %}{% endcapture %} {% assign
           tags_content = tags_content_temp %} {% endif %} {% endfor %} {% endif
           %}
