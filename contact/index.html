@@ -1,0 +1,100 @@
+---
+layout: default
+meta-title: Contact
+title: Contact
+subtitle: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae magni culpa laudantium at.
+---
+
+<section class="bg-contact">
+  {% include title.html %}
+  <div class="contact-content">
+    <div class="contact-left">
+      <div class="contact-left-info">
+        <div class="contact_details">
+          <div class="about">
+            <h4>Contact us</h4>
+            <hr />
+            <p>
+              We will be happy to assist you in: Avinguda des Camp Verd P37-46,
+              07730 Alaior.
+            </p>
+          </div>
+          <div class="info">
+            <h4 class="color-blue-light">
+              <i class="fas fa-map-marker-alt"></i>Location
+            </h4>
+            <p>Avinguda des Camp Verd P37, 46, 07730 Alaior, Islas Baleares</p>
+            <h4 class="color-blue-light">
+              <i class="fas fa-mobile-alt"></i> Phone
+            </h4>
+            <p>+34 637 70 13 74</p>
+            <h4 class="color-blue-light">
+              <i class="far fa-envelope"></i> Email
+            </h4>
+            <p>info@johndoe.es</p>
+          </div>
+        </div>
+        <ul class="social-links mt50">
+          <li class="social__item">
+            <a href="{{ site.facebook_path }}" target="_blank"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li class="social__item">
+            <a href="{{ site.twitter_path }}" target="_blank"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="social__item">
+            <a href="{{ site.free-code-camp_path }}" target="_blank"><i class="fab fa-free-code-camp"></i></a>
+          </li>
+          <li class="social__item">
+            <a href="{{ site.codepen_path }}" target="_blank"><i class="fab fa-codepen"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="contact-left-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.338384896538!2d4.147550115478896!3d39.933819992790625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12be21b9ec7e3359%3A0x4958a4bbdab1ed23!2smybooking!5e0!3m2!1ses!2ses!4v1546868592476"
+          width="100%"
+          height="553"
+          frameborder="0"
+          style="border:0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="contact-form contact-right">
+      <h4>Form</h4>
+      <hr />
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id=""
+            aria-describedby="name"
+            placeholder="Enter your name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="comment">Comment:</label>
+          <textarea class="form-control" rows="4" id="comment"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="">
+            <button type="submit" class="btn btn-outline-light">Submit</button>
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

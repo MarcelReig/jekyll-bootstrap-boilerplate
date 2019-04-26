@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+
+  <body class="{{ page.navcolor }}">
+
+    {% include nav.html %}
+
+    <main aria-label="Content">
+        {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <!-- main scripts -->
+    <script src="{{'/assets/scripts/app.js' | prepend: site.baseurl}}"></script>
+    
+    <a href="#0" class="cd-top">Top</a>
+  </body>
+
+</html>

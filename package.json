@@ -1,0 +1,37 @@
+{
+  "name": "jekyll-bootstrap",
+  "version": "0.0.0",
+  "description": "Jekyll Bootstrap Starter Theme",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Marcel Reig <marcelreig@gmail.com> (http://netinetidesign.com)",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "4.3.1",
+    "cowsay": "^1.4.0",
+    "jquery": "^3.4.0",
+    "jquery-validation": "^1.19.0",
+    "npm": "^6.9.0",
+    "popper.js": "^1.15.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^4.1.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-cache": "^1.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-newer": "^1.4.0",
+    "gulp-order": "^1.2.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-shell": "^0.7.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
+    "node-sass": "^4.11.0",
+    "pump": "^3.0.0"
+  }
+}

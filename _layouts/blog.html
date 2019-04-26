@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+{% include title.html %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-8 offset-lg-2">
+      {{ content }}
+      <ul class="post-list">
+        {% for post in paginator.posts %}
+        <li>
+          <a class="post-link" href="{{ post.url }}">
+            <h2>
+              {{ post.title }}
+            </h2>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          </a>
+          <!-- Featured image -->
+          <div class="post-image-wrapper mb30">
+            <img src="{{ site.baseurl }}/assets/images/blog/{{ post.image }}" />
+          </div>
+          {{ post.excerpt }}
+          <a href="{{ site.baseurl }}{{ post.url }}"
+            >Read more <i class="fas fa-long-arrow-alt-right"></i
+          ></a>
+        </li>
+        {% endfor %}
+      </ul>
+      <div class="pagination">
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="previous"
+          >&laquo; Previous</a
+        >
+        {% endif %}
+
+        <span class="page_number"
+          >Page: {{ paginator.page }} of {{ paginator.total_pages }}</span
+        >
+
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="next">Next &raquo;</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

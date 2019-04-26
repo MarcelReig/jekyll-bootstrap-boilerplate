@@ -1,0 +1,24 @@
+// Base styles
+html {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: $bg-color;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  // links
+a {
+  color: $brand-color;
+  &:hover {
+    color: lighten($brand-color, 10%);
+    text-decoration: none;
+  }
+}

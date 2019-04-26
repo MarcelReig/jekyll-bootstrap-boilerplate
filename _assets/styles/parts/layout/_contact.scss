@@ -1,0 +1,123 @@
+//====================================
+//=========   Contact 
+//====================================
+
+.bg-contact {
+  background-image: url(../images/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: $bg-color;
+  background-blend-mode: multiply;
+  padding-bottom: 100px;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  width: calc(100% -30px);
+  color: $white;
+  hr {
+    width: 50px;
+    margin: auto 0 30px 0;
+    border-top: 1px dashed $transparent-white;
+  }
+}
+
+.contact-left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-left-info {
+  width: 100%;
+  background-color: #2a1d39;
+  padding: 20px 10% 20px 20px;
+}
+
+.contact-left-map {
+  background-color: $white;
+  width: 100%;
+}
+
+.contact-right {
+  width: 100%;
+}
+
+.contact-form {
+  padding: 20px;
+  background-color: $brand-color;
+}
+
+.contact-form input,
+.contact-form form textarea {
+  width: 100%;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 2em;
+  color: #acb7ee;
+}
+
+ul.social-links,
+.social-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.social-links li {
+  float: left;
+  margin-left: 30px;
+  list-style: none;
+  font-size: 2em;
+}
+
+.social-links > li:first-child {
+  margin-left: 0;
+}
+
+.social-links a {
+  color: $transparent-white;
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .contact-left {
+    flex-direction: row;
+  }
+  .contact-left-info {
+    width: 50%;
+  }
+  .contact-left-map {
+    width: 50%;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .contact-content {
+    flex-direction: row;
+    margin: 50px 10% 0 10%;
+    height: 553px;
+  }
+  .contact-left {
+    width: 80%;
+  }
+  .contact-right {
+    width: 20%;
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .contact-left {
+    width: 70%;
+  }
+  .contact-right {
+    width: 30%;
+  }
+}
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .contact-left-map {
+    display: none;
+  }
+}

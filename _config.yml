@@ -1,0 +1,86 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Jekyll Bootstarp Starter
+email: johndoe@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  This is a boilerplate for Jekyll and Bootstrap 4.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: johndoe
+github_username: johndoe
+
+# Social 
+codepen_path: http://codepen.io/MarcelReig
+github_path: https://github.com/MarcelReig
+twitter_path: https://twitter.com/netinetidesign
+facebook_path: https://www.facebook.com/marcelreig
+behance_path: https://www.behance.net/netinetidesign
+spotify_path: https://play.spotify.com/user/netineti
+free-code-camp_path: https://www.freecodecamp.org/marcelreig
+
+# Build settings
+markdown: kramdown
+
+# Plugins
+plugins: [jekyll-paginate]
+
+# Outputting
+permalink: /post/:title/
+paginate: 6
+paginate_path: /blog/page:num/
+
+# Collections
+collections:
+  my_categories:
+    output: true
+    permalink: /blog/category/:name/
+  my_tags:
+    output: true
+    permalink: /blog/tag/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: my_categories
+    values:
+      layout: blog_by_category
+  - scope:
+      path: ""
+      type: my_tags
+    values:
+      layout: blog_by_tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - gulpfile.js
+  - package-lock.json
+  - package.json
+  - node_modules
+  - README.md
+  - CHANGELOG.md
