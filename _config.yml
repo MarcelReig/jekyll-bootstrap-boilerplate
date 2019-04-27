@@ -22,6 +22,9 @@ url: "https://marcelreig.github.io" # the base hostname & protocol for your site
 twitter_username: johndoe
 github_username: johndoe
 
+# Analytics
+google_analytics: UA-XXXXXXXX-X #Where UA-XXXXXXXX-X is your tracking ID
+
 # Social 
 codepen_path: http://codepen.io/MarcelReig
 github_path: https://github.com/MarcelReig
