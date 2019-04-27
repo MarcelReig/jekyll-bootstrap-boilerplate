@@ -19,7 +19,7 @@
     crossorigin="anonymous"
   />
   <link rel="stylesheet" href="{{
-    "/assets/styles/main.css" | prepend: site.baseurl
+    "/assets/styles/main.css" | prepend: relative_url
   }}"> {%- feed_meta -%} {%- if jekyll.environment == 'production' and
   site.google_analytics -%} {%- include google-analytics.html -%} {%- endif -%}
 </head>

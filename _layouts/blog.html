@@ -11,7 +11,7 @@ layout: default
       <ul class="post-list">
         {% for post in paginator.posts %}
         <li>
-          <a class="post-link" href="{{ post.url }}">
+          <a class="post-link" href="{{ site.baseurl }}{{ post.url }}">
             <h2>
               {{ post.title }}
             </h2>
@@ -19,10 +19,10 @@ layout: default
           </a>
           <!-- Featured image -->
           <div class="post-image-wrapper mb30">
-            <img src="{{ site.url }}/{{ site.baseurl }}/assets/images/blog/{{ post.image }}" />
+            <img src="{{ site.url }}{{ site.baseurl }}/assets/images/blog/{{ post.image }}" />
           </div>
           {{ post.excerpt }}
-          <a href="{{ post.url }}"
+          <a href="{{ site.baseurl }}{{ post.url }}"
             >Read more <i class="fas fa-long-arrow-alt-right"></i
           ></a>
         </li>

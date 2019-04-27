@@ -22,7 +22,7 @@ layout: default
       <h3 class="my-3">{{ post_year }}</h3>
       <div class="list-group">
         {% endif %} {% endunless %}
-        <a href="{{ post.url }}" class="list-group-item">
+        <a href="{{ site.baseurl }}{{ post.url }}" class="list-group-item">
           <h4 class="list-group-item-heading h6">{{ post.title }}</h4>
         </a>
         {% if forloop.last %}
