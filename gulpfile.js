@@ -248,10 +248,7 @@ function clean_assets() {
   return del(["./assets"]);
 }
 
-const clean_all = gulp.series(
-  clean_jekyll,
-  clean_assets
-)
+const clean_all = gulp.series(clean_jekyll, clean_assets);
 
 // -----------------------------------------------------------------------------
 //   6: Localhost Server for development
@@ -281,7 +278,7 @@ const build_all = gulp.series(
   build_images,
   build_fonts,
   build_scripts,
-  build_styles,
+  // build_styles,
   build_jekyll,
   build_localServer
 );

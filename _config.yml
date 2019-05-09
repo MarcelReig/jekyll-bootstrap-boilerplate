@@ -25,14 +25,14 @@ github_username: johndoe
 # Analytics
 google_analytics: UA-XXXXXXXX-X #Where UA-XXXXXXXX-X is your tracking ID
 
-# Social 
-codepen_path: http://codepen.io/MarcelReig
-github_path: https://github.com/MarcelReig
-twitter_path: https://twitter.com/netinetidesign
-facebook_path: https://www.facebook.com/marcelreig
-behance_path: https://www.behance.net/netinetidesign
-spotify_path: https://play.spotify.com/user/netineti
-free-code-camp_path: https://www.freecodecamp.org/marcelreig
+# Social
+codepen_path: http://codepen.io/johndoe
+github_path: https://github.com/johndoe
+twitter_path: https://twitter.com/johndoe
+facebook_path: https://www.facebook.com/johndoe
+behance_path: https://www.behance.net/johndoe
+spotify_path: https://play.spotify.com/user/johndoe
+free-code-camp_path: https://www.freecodecamp.org/johndoe
 
 # Build settings
 markdown: kramdown
