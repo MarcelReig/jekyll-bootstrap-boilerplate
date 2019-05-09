@@ -278,7 +278,7 @@ const build_all = gulp.series(
   build_images,
   build_fonts,
   build_scripts,
-  // build_styles,
+  build_styles,
   build_jekyll,
   build_localServer
 );
