@@ -1,20 +1,20 @@
 // Base styles
 html {
-    box-sizing: border-box;
-  }
-  body {
-    background-color: $bg-color;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
+  box-sizing: border-box;
+}
+body {
+  background-color: $bg-color;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
-  // links
+// links
 a {
   color: $brand-color;
   &:hover {

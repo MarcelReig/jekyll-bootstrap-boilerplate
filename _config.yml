@@ -88,3 +88,7 @@ exclude:
   - README.md
   - readme.md
   - CHANGELOG.md
+
+# Disqus Comments
+disqus:
+    shortname: # Your disqus shortname
