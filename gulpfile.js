@@ -34,7 +34,7 @@ const newer = require("gulp-newer");
 // Config
 const config = {
   sassPaths: ["node_modules"],
-  production: gutil.env.environment === "production"
+  production: gutil.env.environment === "production",
 };
 
 // -----------------------------------------------------------------------------
@@ -60,12 +60,12 @@ function build_styles() {
       .pipe(
         sass({
           includePaths: config.sassPaths,
-          outputStyle: "compressed" // if css compressed **file size**
+          outputStyle: "compressed", // if css compressed **file size**
         }).on("error", sass.logError)
       )
       .pipe(
         autoprefixer({
-          browsers: ["last 2 versions", "ie >= 9"]
+          browsers: ["last 2 versions", "ie >= 9"],
         })
       )
       .pipe(gulp.dest("./assets/styles"))
@@ -76,19 +76,15 @@ function build_styles() {
       .pipe(
         sass({
           includePaths: config.sassPaths,
-          outputStyle: "expanded" // if css compressed **file size**
+          outputStyle: "expanded", // if css compressed **file size**
         }).on("error", sass.logError)
       )
-      .pipe(
-        autoprefixer({
-          browsers: ["last 2 versions", "ie >= 9"]
-        })
-      )
+      .pipe(autoprefixer())
       .pipe(gulp.dest("./assets/styles"))
       .pipe(gulp.dest("./_site/assets/styles"))
       .pipe(
         browserSync.reload({
-          stream: true
+          stream: true,
         })
       );
   }
@@ -107,7 +103,7 @@ function build_scripts(done) {
         "./node_modules/jquery/dist/jquery.min.js",
         "./node_modules/jquery-validation/dist/jquery.validate.js",
         "./node_modules/popper.js/dist/umd/popper.min.js",
-        "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+        "./node_modules/bootstrap/dist/js/bootstrap.min.js",
       ]),
       order(
         [
@@ -115,16 +111,15 @@ function build_scripts(done) {
           "node_modules/jquery-validation/dist/jquery.validate.js",
           "node_modules/popper.js/dist/umd/popper.min.js",
           "node_modules/bootstrap/dist/js/bootstrap.min.js",
-          "webservices.js",
-          "main.js"
+          "main.js",
         ],
         {
-          base: "./"
+          base: "./",
         }
       ),
       concat("app.js"),
       uglify(),
-      gulp.dest("./assets/scripts")
+      gulp.dest("./assets/scripts"),
     ]);
     done();
   } else {
@@ -134,7 +129,7 @@ function build_scripts(done) {
         "./node_modules/jquery/dist/jquery.js",
         "./node_modules/jquery-validation/dist/jquery.validate.js",
         "./node_modules/popper.js/dist/umd/popper.js",
-        "./node_modules/bootstrap/dist/js/bootstrap.js"
+        "./node_modules/bootstrap/dist/js/bootstrap.js",
       ]),
       order(
         [
@@ -142,19 +137,18 @@ function build_scripts(done) {
           "node_modules/jquery-validation/dist/jquery.validate.js",
           "node_modules/popper.js/dist/umd/popper.js",
           "node_modules/bootstrap/dist/js/bootstrap.js",
-          "webservices.js",
-          "main.js"
+          "main.js",
         ],
         {
-          base: "./"
+          base: "./",
         }
       ),
       concat("app.js"),
       gulp.dest("./assets/scripts"),
       gulp.dest("./_site/assets/scripts"),
       browserSync.reload({
-        stream: true
-      })
+        stream: true,
+      }),
     ]);
     done();
   }
@@ -165,43 +159,43 @@ function build_scripts(done) {
 // -----------------------------------------------------------------------------
 
 function build_images() {
-  // Construccion JEKYLL
+  // Construcción JEKYLL
   return (
     gulp
-      .src("./_assets/images/**/*.+(jpg|JPG|jpeg|JPEG|png|PNG|svg|SVG)")
+      .src("./_assets/images/**/*.+(jpg|JPG|jpeg|JPEG|png|PNG|svg|SVG|ico)")
       // Caching images that ran through imagemin
       .pipe(
         cache(
           imagemin([
             imagemin.gifsicle({
-              interlaced: true
+              interlaced: true,
             }),
             imagemin.jpegtran({
-              progressive: true
+              progressive: true,
             }),
             imagemin.optipng({
-              optimizationLevel: 5
+              optimizationLevel: 5,
             }),
             imagemin.svgo({
               plugins: [
                 {
-                  removeViewBox: true
+                  removeViewBox: true,
                 },
                 {
-                  cleanupIDs: false
-                }
-              ]
-            })
+                  cleanupIDs: false,
+                },
+              ],
+            }),
           ])
         )
       )
       .pipe(gulp.dest("./assets/images"))
   );
 }
-// WATCH : Actualizacion
+// WATCH : Actualización
 function sync_images() {
   return gulp
-    .src("./_assets/images/**/*.+(jpg|JPG|jpeg|JPEG|png|PNG|svg|SVG)")
+    .src("./_assets/images/**/*.+(jpg|JPG|jpeg|JPEG|png|PNG|svg|SVG|ico)")
     .pipe(newer("./assets/images"))
     .pipe(gulp.dest("./assets/images"))
     .pipe(gulp.dest("./_site/assets/images"))
@@ -216,22 +210,22 @@ function build_jekyll() {
   if (config.production) {
     return gulp
       .src("index.html", {
-        read: false
+        read: false,
       })
       .pipe(
         shell([
-          "JEKYLL_ENV=production bundle exec jekyll build --config _config.yml"
+          "JEKYLL_ENV=production bundle exec jekyll build --config _config.yml",
         ])
       )
       .on("error", gutil.log);
   } else {
     return gulp
       .src("index.html", {
-        read: false
+        read: false,
       })
       .pipe(
         shell([
-          'bundle exec jekyll build --drafts  --config "_config.yml,_config_localhost.yml"'
+          'bundle exec jekyll build  --config "_config.yml,_config_localhost.yml"',
         ])
       )
       .on("error", gutil.log);
@@ -259,8 +253,8 @@ function build_localServer() {
   browserSync.init({
     port: 4000,
     server: {
-      baseDir: "./_site/"
-    }
+      baseDir: "./_site/",
+    },
   });
 }
 
@@ -292,7 +286,7 @@ function watchFiles() {
   gulp.watch("_assets/styles/**/*.scss", build_styles);
   gulp.watch("_assets/scripts/*.js", build_scripts);
   gulp.watch(
-    "_assets/images/**/*.+(jpg|JPG|jpeg|JPEG|png|PNG|svg|SVG)",
+    "_assets/images/**/*.+(ico|jpg|JPG|jpeg|JPEG|png|PNG|svg|SVG)",
     gulp.series(sync_images, browsersync_reload)
   );
   gulp.watch(

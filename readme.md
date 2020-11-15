@@ -31,18 +31,18 @@ Step 4: Generate production-ready files
 $ gulp --environment production
 ```
 
-This is my environment on macOS Mojave 10.14.4
+This is my environment on macOS Catalina 10.15.7
 
 ```shell
 $ node -v
-v11.2.0
+v12.17.0
 $ ruby -v
-ruby 2.6.2p47 (2019-03-13 revision 67232) [x86_64-darwin18]
-bundler -v
-Bundler version 1.17.2
+ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-darwin19]
+bundle -v
+Bundler version 2.1.4
 $ npm -v
-6.9.0
+6.14.8
 $ gulp -v
-[20:19:33] CLI version 2.0.1
-[20:19:33] Local version 4.0.0
+CLI version: 2.2.1
+Local version: 4.0.2
 ```
